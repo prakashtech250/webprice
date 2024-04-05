@@ -1,33 +1,14 @@
-'use client'
-
 import React from 'react'
-import Navbar from './Navbar'
+import { UserMenu, ToolsMenu } from './MenuList'
 import { Button } from './ui/button'
-import { usePathname} from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { Separator } from '@radix-ui/react-dropdown-menu'
-import { ToolsMenu, UserMenu } from './MenuList'
-import { useState, useEffect } from 'react'
+import { SheetClose } from './ui/sheet'
 
-const Sidebar = () => {
-    const [isMobile, setIsMobile] = useState(false);
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
-        handleResize();
-        // Listen for window resize events
-        window.addEventListener('resize', handleResize);
-        // Cleanup the event listener on component unmount
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, [])
-  const pathname = usePathname();
+const SidebarMobile = () => {
+    const pathname = usePathname()
   return (
     <>
-      {!isMobile && 
-      <aside className='w-[300px] border rounded-sm'>
         <div className='flex flex-col m-4 gap-2'>
           {ToolsMenu.map((menu, index)=>
           <Link href={menu.link} scroll={false} key={index}>
@@ -48,10 +29,8 @@ const Sidebar = () => {
           </Link>
           )}
         </div>
-      </aside>
-    }
     </>
   )
 }
 
-export default Sidebar
+export default SidebarMobile
