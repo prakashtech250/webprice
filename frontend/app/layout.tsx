@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme";
 import Sidebar from "@/components/Sidebar";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,11 +21,21 @@ export default function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning>
         <head />
-        <body className='flex items-start justify-between'>
-          <Sidebar />
-          <main className="w-full h-full">
-            {children}
-          </main>
+        <body className=''>
+          <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+            <Navbar />
+            <div className="flex">
+              <Sidebar />
+              <main className="container mt-4">
+              {children}
+              </main>
+            </div>
+            </ThemeProvider> 
         </body>
       </html>
     </>

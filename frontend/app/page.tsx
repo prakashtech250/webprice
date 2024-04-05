@@ -5,8 +5,8 @@ import Sidebar from "@/components/Sidebar";
 export default function Home() {
   return (
     <>
-      <div className="">
-        <ModeToggle />
+      <div className="container mt-4 h-full w-full bg-background">
+        this is page
       </div>
     </>
   );
