@@ -10,6 +10,7 @@ import Link from 'next/link'
 import { Button } from './ui/button'
 import { usePathname } from 'next/navigation'
 import { LoginLink, RegisterLink } from '@kinde-oss/kinde-auth-nextjs'
+import AuthButton from './AuthButton'
 
 const NavbarMobile = () => {
     const pathname = usePathname();
@@ -37,17 +38,18 @@ const NavbarMobile = () => {
                     <div className='flex flex-col m-4 pt-4 gap-2 border-t-2'>
                     {UserMenu.map((menu, index)=>
                     <Link href={menu.link} scroll={false} key={index}>
+                        <SheetClose asChild>
                         <Button variant={menu.link === pathname? "secondary": "ghost"} className=' text-md flex justify-between w-full'>
                         <span>{React.createElement(menu.logo)}</span>
                         {menu.title}
                         </Button>  
+                        </SheetClose>
                     </Link>
                     )}
                     </div>
                 </div>
                 <div className='flex justify-center m-6 gap-5'>
-                    <LoginLink><Button>Sign In</Button></LoginLink>
-                    <RegisterLink><Button variant="outline">Sign Up</Button></RegisterLink> 
+                        <AuthButton/>
                     </div>
             </SheetContent>
         </Sheet>

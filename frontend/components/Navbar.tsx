@@ -5,7 +5,7 @@ import { ModeToggle } from './mode-toggle'
 import { Button } from './ui/button'
 import Link from 'next/link'
 import NavbarMobile from './Navbar-mobile'
-import { LoginLink, RegisterLink } from '@kinde-oss/kinde-auth-nextjs'
+import AuthButton from './AuthButton'
 
 const Navbar = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -32,11 +32,7 @@ const Navbar = () => {
             <div className='flex items-center gap-2 justify-center p-4'>
             <ModeToggle/>
             {isMobile ? <NavbarMobile/>: 
-                <>
-                <LoginLink><Button>Sign In</Button></LoginLink>
-                
-                <RegisterLink><Button variant="outline">Sign Up</Button></RegisterLink>  
-                </>  
+                <AuthButton/>
             }
             </div>
         </nav>
