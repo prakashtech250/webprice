@@ -29,9 +29,9 @@ const reviews = () => {
     <form onSubmit={handleSubmit}>
       <div className='flex flex-col items-center mt-8 gap-2'>
         <label className='text-3xl'>Amazon Product Reviews</label>
-        <div className='flex md:w-5/6 w-full gap-2 mt-6'>
-          <Input type="text" value={asin} onChange={(e) => setAsin(e.target.value)} placeholder='Enter Asin or Product Url'/>
-          <Button>Submit</Button>
+        <div className='flex md:w-5/6 w-full gap-1 mt-6'>
+          <Input className='bg-secondary' type="text" value={asin} onChange={(e) => setAsin(e.target.value)} placeholder='Enter Asin or Product Url'/>
+          <Button className=''>Submit</Button>
         </div>
       </div>
     </form>
