@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input'
 import React, { FormEvent } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 const reviews = () => {
   const [reviews, setReviews] = useState([])
@@ -29,9 +30,17 @@ const reviews = () => {
     <form onSubmit={handleSubmit}>
       <div className='flex flex-col items-center mt-8 gap-2'>
         <label className='text-3xl'>Amazon Product Reviews</label>
-        <div className='flex md:w-5/6 w-full gap-1 mt-6'>
+        <div className='flex md:w-5/6 w-full gap-2 mt-6'>
           <Input className='bg-secondary' type="text" value={asin} onChange={(e) => setAsin(e.target.value)} placeholder='Enter Asin or Product Url'/>
           <Button className=''>Submit</Button>
+        </div>
+        <div className='flex flex-col gap-4 md:w-5/6 w-full mt-5'>
+        <Card className='shadow-md shadow-secondary'>
+          <CardHeader>
+            <CardTitle className='text-lg'>This is the title</CardTitle>
+            <CardDescription>This is the description</CardDescription>
+          </CardHeader>
+        </Card>
         </div>
       </div>
     </form>
