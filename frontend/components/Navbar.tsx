@@ -6,6 +6,8 @@ import { Button } from './ui/button'
 import Link from 'next/link'
 import NavbarMobile from './Navbar-mobile'
 import AuthButton from './AuthButton'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
+import LanguageToggle from './LanguageToggle'
 
 const Navbar = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -29,7 +31,9 @@ const Navbar = () => {
                 Web<span className='text-primary font-extrabold'>Price</span>
                 </Link>
             </div>
+            
             <div className='flex items-center gap-2 justify-center p-4'>
+            {/* <LanguageToggle/> */}
             <ModeToggle/>
             {isMobile ? <NavbarMobile/>: 
                 <AuthButton/>
