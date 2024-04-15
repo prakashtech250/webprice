@@ -21,7 +21,7 @@ export default function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning>
         <head />
-        <body className=''>
+        <body className='m-2'>
           <ThemeProvider
               attribute="class"
               defaultTheme="system"
@@ -29,7 +29,7 @@ export default function RootLayout({
               disableTransitionOnChange
             >
             <Navbar />
-            <div className="flex">
+            <div className="flex mt-2">
               <Sidebar />
               <main className="container mt-4">
               {children}
