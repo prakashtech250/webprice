@@ -31,7 +31,7 @@ const Sidebar = () => {
         <div className='flex flex-col m-4 gap-2'>
           {ToolsMenu.map((menu, index)=>
           <Link href={menu.link} scroll={false} key={index}>
-            <Button variant={menu.link === pathname? "secondary": "ghost"} className='grow text-md flex justify-between w-full'>
+            <Button variant={menu.link === pathname? "secondary": "ghost"} className='text-md flex justify-between w-full'>
               <span>{React.createElement(menu.logo)}</span>
               {menu.title}
               </Button>  
@@ -41,7 +41,7 @@ const Sidebar = () => {
         <div className='flex flex-col m-4 pt-4 gap-2 border-t-2'>
           {UserMenu.map((menu, index)=>
           <Link href={menu.link} scroll={false} key={index}>
-            <Button variant={menu.link === pathname? "secondary": "ghost"} className=' text-md flex justify-between w-full'>
+            <Button variant={menu.link === pathname? "secondary": "ghost"} className='text-md flex justify-between w-full'>
               <span>{React.createElement(menu.logo)}</span>
               {menu.title}
               </Button>  
