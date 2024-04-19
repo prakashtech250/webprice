@@ -9,10 +9,10 @@ const AuthButton = () => {
     return ( 
         isAuthenticated ? 
         <>
-            <LogoutLink><Button>Log Out</Button></LogoutLink>
+            <LogoutLink><Button className='rounded-full'>Log Out</Button></LogoutLink>
         </> : <>
-            <LoginLink><Button>Sign In</Button></LoginLink>
-            <RegisterLink><Button variant="outline">Sign Up</Button></RegisterLink>  
+            <LoginLink><Button className='rounded-full'>Sign In</Button></LoginLink>
+            <RegisterLink><Button variant="outline" className='rounded-full border-primary border-2'>Sign Up</Button></RegisterLink>  
         </>
     )
 }
