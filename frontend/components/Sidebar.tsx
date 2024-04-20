@@ -27,7 +27,7 @@ const Sidebar = () => {
   return (
     <>
       {!isMobile && 
-      <aside className='w-[360px] border rounded-sm'>
+      <aside className='w-[360px] border rounded-lg'>
         <div className='flex flex-col m-4 gap-2'>
           {ToolsMenu.map((menu, index)=>
           <Link href={menu.link} scroll={false} key={index}>
