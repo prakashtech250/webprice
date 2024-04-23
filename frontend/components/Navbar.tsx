@@ -25,7 +25,7 @@ const Navbar = () => {
     }, [])
   return (
     <>
-        <nav className='flex border-b rounded-sm bg-background h-18'>
+        <nav className='flex border-b bg-card h-18'>
             <div className='text-3xl text-bold antialiased m-4 px-4 w-full'>
                 <Link href='/'>
                 Web<span className='text-primary font-extrabold'>Price</span>

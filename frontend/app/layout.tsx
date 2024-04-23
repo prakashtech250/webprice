@@ -30,7 +30,7 @@ export default function RootLayout({
             >
             <Navbar />
             <div className="flex mt-4">
-              {/* <Sidebar /> */}
+              <Sidebar />
               <main className="container mt-2 ">
               {children}
               </main>
