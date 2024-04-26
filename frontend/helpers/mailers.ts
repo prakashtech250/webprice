@@ -4,8 +4,8 @@ import bcryptjs from 'bcryptjs'
 
 export const sendEmail = async({email, emailType, userId}:any) => {
     try {
-        const salt = await bcryptjs.genSalt(10);
-        const hashedToken = await bcryptjs.hash(userId, salt);
+        // const salt = await bcryptjs.genSalt(10);
+        const hashedToken = await bcryptjs.hash(userId.toString(), 10);
         const transport = nodemailer.createTransport({
             host: "sandbox.smtp.mailtrap.io",
             port: 2525,
@@ -16,7 +16,7 @@ export const sendEmail = async({email, emailType, userId}:any) => {
           });
           if (emailType === "VERIFY"){
             await User.findByIdAndUpdate(userId, {
-                verifyToken: hashedToken,
+                verifyToken: "hashedToken",
                 verifyTokenExpery: Date.now() + 3600000
             })
           }

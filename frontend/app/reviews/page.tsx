@@ -35,7 +35,7 @@ const reviews = () => {
           <Button className=''>Submit</Button>
         </div>
         <div className='flex flex-col gap-4 md:w-5/6 w-full mt-5'>
-        <Card className='bg-card border '>
+        <Card className='bg-card border-none shadow-sm shadow-secondary'>
           <CardHeader>
             <CardTitle className='text-lg'>This is the title</CardTitle>
             <CardDescription>This is the description</CardDescription>
