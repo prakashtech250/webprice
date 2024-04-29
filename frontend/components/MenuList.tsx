@@ -14,7 +14,7 @@ export const ToolsMenu: Menu[] = [
   ]
   
 export const UserMenu: Menu[] = [
-  {title: 'Account', logo:User, link:'/account'},
+  {title: 'Profile', logo:User, link:'/profile'},
   {title: 'Settings', logo:Settings, link:'/settings'},
   {title: 'Billing', logo:CreditCard, link:'/billing'}
 ]
